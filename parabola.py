@@ -1,6 +1,8 @@
 # Imports
 import turtle
 
+print("starting parabola drawing program")
+
 # Defines a coordinate
 class Point:
     def __init__(self, x, y):
