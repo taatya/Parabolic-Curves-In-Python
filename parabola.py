@@ -195,12 +195,7 @@ elif star_or_curve == 'Curve' or 'curve':
         xList.append(xPoint)
         x += steps
 
-    # Calculating  coordinates
-    x = 0
-    while x <= xMax.x:
-        xPoint = Point(x, origin.y)
-        xList.append(xPoint)
-        x += steps
+
 
     # Drawing the base
     pen.penup()
