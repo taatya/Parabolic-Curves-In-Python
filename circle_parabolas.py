@@ -50,7 +50,7 @@ wn.title('Parabolic Curves')
 
 # Pen
 pen = turtle.Turtle()
-pen.speed(0)
+pen.speed(10)
 pen.color('green')
 pen.hideturtle()
 
@@ -69,7 +69,6 @@ draw_curves(pen, topLeftYList, topLeftXList)
 draw_curves(pen, bottomLeftYList, bottomLeftXList)
 draw_curves(pen, topRightYList, topRightXList)
 draw_curves(pen, bottomRightYList, bottomRightXList)
-print(bottomRightYList, bottomRightXList)
 
 # Quit function
 running = True
