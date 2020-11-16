@@ -1,5 +1,6 @@
 # Imports
 import turtle
+from draw_curves import draw_curves
 
 print("starting parabola drawing")
 
@@ -32,8 +33,10 @@ NegativeYList = []
 steps = (yMax.y - origin.y) / parts
 
 # Setting up the screen
+width = 1000
+height = 1000
 wn = turtle.Screen()
-wn.setup(width=1000, height=1000)
+wn.setup(width=width, height=height)
 wn.tracer(1)
 wn.bgcolor('black')
 wn.title('Parabolic Curves')
@@ -98,22 +101,13 @@ yList.reverse()
 NegativeYList.reverse()
 LenOfList = len(yList)
 
-# Helping to make the curves
-def draw_curves(firstList, secondList):
-    i = 0
-    while i < LenOfList:
-        pen.penup()
-        pen.goto(firstList[i].x, firstList[i].y)
-        pen.pendown()
-        pen.goto(secondList[i].x, secondList[i].y)
-        i += 1
 
 
 # Making the curves
-draw_curves(xList, yList)
-draw_curves(NegativeXList, yList)
-draw_curves(NegativeXList, NegativeYList)
-draw_curves(xList, NegativeYList)
+draw_curves(pen, xList, yList)
+draw_curves(pen, NegativeXList, yList)
+draw_curves(pen, NegativeXList, NegativeYList)
+draw_curves(pen, xList, NegativeYList)
 
 # Quitting the program
 running = True
