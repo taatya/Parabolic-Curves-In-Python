@@ -45,7 +45,7 @@ wn.title('Parabolic Curves')
 
 # Pen
 pen = turtle.Turtle()
-pen.speed(10)
+pen.speed(0)
 pen.color('green')
 pen.hideturtle()
 
