@@ -1,5 +1,5 @@
 # Imports
-from draw_curves import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
+from functions_and_classes_for_parabolas import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
 import turtle
 
 # Screen Size
