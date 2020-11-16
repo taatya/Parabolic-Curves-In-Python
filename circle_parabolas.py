@@ -1,3 +1,4 @@
+# Imports
 from draw_curves import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
 import turtle
 

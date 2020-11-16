@@ -1,3 +1,4 @@
+# Imports
 import turtle
 
 # Defines a coordinate
