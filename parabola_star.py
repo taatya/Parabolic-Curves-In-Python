@@ -30,8 +30,6 @@ NegativeXList = getCoordsForXAxis(NegativeXMax, origin, steps, 0)
 NegativeYList = getCoordsForYAxis(NegativeYMax, origin, steps, 0)
 yList.reverse()
 NegativeXList.reverse()
-print(NegativeXList)
-print(yList)
 
 
 # Setting up the screen
