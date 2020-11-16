@@ -36,10 +36,10 @@ bottomLeftXList = getCoordsForXAxis(bottomLeft, Point(origin.x, negativeYMax.y),
 bottomLeftYList = getCoordsForYAxis(bottomLeft, Point(negativeXMax.x, origin.y), steps, negativeXMax.x)
 bottomLeftYList.reverse()
 topRightYList = getCoordsForYAxis(Point(xMax.x, origin.y), topRight, steps, xMax.x)
-topRightXList = getCoordsForXAxis(topRight, Point(origin.x, yMax.y), steps, yMax.y)
-bottomRightXList = getCoordsForXAxis(bottomRight, Point(origin.x, negativeYMax.y), steps, negativeYMax.y)
-bottomRightYList = getCoordsForYAxis(topRight, Point(xMax.x, origin.y), steps, xMax.x)
-
+topRightXList = getCoordsForXAxis(Point(origin.x, yMax.y), topRight, steps, yMax.y)
+topRightYList.reverse()
+bottomRightXList = getCoordsForXAxis(Point(origin.x, negativeYMax.y), bottomRight, steps, negativeYMax.y)
+bottomRightYList = getCoordsForYAxis(bottomRight, Point(xMax.x, origin.y), steps, xMax.x)
 
 # Setting up the screen
 wn = turtle.Screen()
@@ -50,7 +50,7 @@ wn.title('Parabolic Curves')
 
 # Pen
 pen = turtle.Turtle()
-pen.speed(10)
+pen.speed(0)
 pen.color('green')
 pen.hideturtle()
 
@@ -69,6 +69,7 @@ draw_curves(pen, topLeftYList, topLeftXList)
 draw_curves(pen, bottomLeftYList, bottomLeftXList)
 draw_curves(pen, topRightYList, topRightXList)
 draw_curves(pen, bottomRightYList, bottomRightXList)
+print(bottomRightYList, bottomRightXList)
 
 # Quit function
 running = True
