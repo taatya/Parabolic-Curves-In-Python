@@ -20,10 +20,12 @@ yMax = Point(origin.x, 480)
 xMax = Point(480, origin.y)
 NegativeXMax = Point(-480, 0)
 NegativeYMax = Point(0, -480)
-parts = float(input('Please enter how many parts you would like ( the number of dots): '))
-if parts == str:
-    running = False
+try:
+    parts = float(input('Please enter how many parts you would like ( the number of dots): '))
+    parts += 1
+except ValueError:
     print('You did not type a number! Please re-start the program, and do it right this time')
+    quit()
 parts += 1
 yList = []
 xList = []
@@ -77,25 +79,25 @@ while NegativeY >= NegativeYMax.y:
 
 
 # Drawing the base
-# pen.penup()
-# pen.goto(0, 0)
-# pen.pendown()
-# pen.goto(origin.x, yMax.y)
+pen.penup()
+pen.goto(0, 0)
+pen.pendown()
+pen.goto(origin.x, yMax.y)
 
-# pen.penup()
-# pen.goto(origin.x, origin.y)
-# pen.pendown()
-# pen.goto(xMax.x, origin.y)
+pen.penup()
+pen.goto(origin.x, origin.y)
+pen.pendown()
+pen.goto(xMax.x, origin.y)
 
-# pen.penup()
-# pen.goto(origin.x, origin.y)
-# pen.pendown()
-# pen.goto(NegativeXMax.x, origin.y)
+pen.penup()
+pen.goto(origin.x, origin.y)
+pen.pendown()
+pen.goto(NegativeXMax.x, origin.y)
 
-# pen.penup()
-# pen.goto(origin.x, origin.y)
-# pen.pendown()
-# pen.goto(origin.x, NegativeYMax.y)
+pen.penup()
+pen.goto(origin.x, origin.y)
+pen.pendown()
+pen.goto(origin.x, NegativeYMax.y)
 
 yList.reverse()
 NegativeYList.reverse()
