@@ -20,11 +20,12 @@ bottomLeft = Point(negativeXMax.x, negativeYMax.y)
 bottomRight = Point(xMax.x, negativeYMax.y)
 
 # Parts
-parts = float(input('Please enter how many parts you would like ( the number of dots): '))
-if parts == str:
-    running = False
+try:
+    parts = float(input('Please enter how many parts you would like ( the number of dots): '))
+    parts += 1
+except ValueError:
     print('You did not type a number! Please re-start the program, and do it right this time')
-parts += 1
+    quit()
 
 # Steps
 steps = (yMax.y - origin.y) / parts
