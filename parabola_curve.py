@@ -1,6 +1,6 @@
 # Imports
 import turtle
-from functions_and_classes_for_parabolas import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
+from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
 
 
 #  Variables
