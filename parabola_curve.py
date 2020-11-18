@@ -3,11 +3,24 @@ import turtle
 from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
 
 
-#  Variables
-maxQuantity = 480
-origin = Point(0, 0)
-yMax = Point(origin.x, maxQuantity)
-xMax = Point(maxQuantity, origin.y)
+# Screen Size
+screen_size = 1000.0
+width = screen_size
+height = screen_size
+padding = 40.0
+paddedWidth = width - padding
+paddedHeight = height - padding
+
+# Points
+origin = Point(((screen_size - padding) / 2) * (-1),((screen_size - padding) / 2) * (-1))
+yMax = Point(origin.x, paddedHeight / 2)
+xMax = Point(paddedWidth/ 2, origin.y)
+negativeXMax = Point((paddedWidth/ 2) * (-1), origin.y)
+negativeYMax = Point(origin.x, (paddedHeight/ 2) * (-1))
+topLeft = Point(negativeXMax.x, yMax.y)
+topRight = Point(xMax.x, yMax.y)
+bottomLeft = Point(negativeXMax.x, negativeYMax.y)
+bottomRight = Point(xMax.x, negativeYMax.y)
 
 # Parts
 try:
@@ -20,14 +33,14 @@ except:
 # Steps
 steps = (yMax.y - origin.y) / parts
 
-yList = getCoordsForYAxis(origin, Point(origin.x, yMax.y), steps, 0)
-xList = getCoordsForXAxis(origin, Point(xMax.x, origin.x), steps, 0)
+yList = getCoordsForYAxis(origin, Point(origin.x, yMax.y), steps, origin.x)
+xList = getCoordsForXAxis(origin, Point(xMax.x, origin.x), steps, origin.y)
 yList.reverse()
 
 
 # Setting up the screen
 wn = turtle.Screen()
-wn.setup(width=1000, height=1000)
+wn.setup(width=width, height=height)
 wn.tracer(1)
 wn.bgcolor('black')
 wn.title('Parabolic Curves (curve)')

@@ -3,10 +3,10 @@ from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
 import turtle
 
 # Screen Size
-screen_size = 1000
+screen_size = 1000.0
 width = screen_size
 height = screen_size
-padding = 40
+padding = 40.0
 paddedWidth = width - padding
 paddedHeight = height - padding
 
