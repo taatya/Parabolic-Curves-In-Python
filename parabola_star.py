@@ -5,12 +5,24 @@ from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
 print("starting parabola drawing")
 
 
-#  Variables
-origin = Point(0,0)
-yMax = Point(origin.x, 480)
-xMax = Point(480, origin.y)
-NegativeXMax = Point(-480, 0)
-NegativeYMax = Point(0, -480)
+# Screen Size
+screen_size = 1000.0
+width = screen_size
+height = screen_size
+padding = 40.0
+paddedWidth = width - padding
+paddedHeight = height - padding
+
+# Points
+origin = Point(0, 0)
+yMax = Point(origin.x, paddedHeight / 2)
+xMax = Point(paddedWidth/ 2, origin.y)
+negativeXMax = Point((paddedWidth/ 2) * (-1), origin.y)
+negativeYMax = Point(origin.x, (paddedHeight/ 2) * (-1))
+topLeft = Point(negativeXMax.x, yMax.y)
+topRight = Point(xMax.x, yMax.y)
+bottomLeft = Point(negativeXMax.x, negativeYMax.y)
+bottomRight = Point(xMax.x, negativeYMax.y)
 
 # Parts
 try:
@@ -26,15 +38,13 @@ steps = (yMax.y - origin.y) / parts
 # Calculating coordinates
 yList = getCoordsForYAxis(origin, yMax, steps, 0)
 xList = getCoordsForXAxis(origin, xMax, steps, 0)
-NegativeXList = getCoordsForXAxis(NegativeXMax, origin, steps, 0)
-NegativeYList = getCoordsForYAxis(NegativeYMax, origin, steps, 0)
+negativeXList = getCoordsForXAxis(negativeXMax, origin, steps, 0)
+negativeYList = getCoordsForYAxis(negativeYMax, origin, steps, 0)
 yList.reverse()
-NegativeXList.reverse()
+negativeXList.reverse()
 
 
 # Setting up the screen
-width = 1000
-height = 1000
 wn = turtle.Screen()
 wn.setup(width=width, height=height)
 wn.tracer(1)
@@ -62,19 +72,19 @@ pen.goto(xMax.x, origin.y)
 pen.penup()
 pen.goto(origin.x, origin.y)
 pen.pendown()
-pen.goto(NegativeXMax.x, origin.y)
+pen.goto(negativeXMax.x, origin.y)
 
 pen.penup()
 pen.goto(origin.x, origin.y)
 pen.pendown()
-pen.goto(origin.x, NegativeYMax.y)
+pen.goto(origin.x, negativeYMax.y)
 
 
 # Making the curves
 draw_curves(pen, xList, yList)
-draw_curves(pen, NegativeXList, yList)
-draw_curves(pen, NegativeXList, NegativeYList)
-draw_curves(pen, xList, NegativeYList)
+draw_curves(pen, negativeXList, yList)
+draw_curves(pen, negativeXList, negativeYList)
+draw_curves(pen, xList, negativeYList)
 
 # Quitting the program
 running = True
