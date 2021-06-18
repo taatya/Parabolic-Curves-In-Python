@@ -1,6 +1,6 @@
 # Imports
 import turtle
-from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
+from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
 
 
 # Screen Size
@@ -47,7 +47,7 @@ wn.title('Parabolic Curves (curve)')
 
 # Pen
 pen = turtle.Turtle()
-pen.speed(10)
+pen.speed(pen_speed)
 pen.color('green')
 pen.hideturtle()
 
