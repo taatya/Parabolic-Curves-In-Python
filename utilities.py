@@ -15,9 +15,7 @@ class Point:
         return "(%d, %d)" % (self.x, self.y)
 
 
-# Helping to make the curves
-def draw_curves(pen, firstList, secondList):
-    global pen_speed
+def draw_left_curves(pen, firstList, secondList):
     i = 0
     LenOfList = len(firstList)
     while i < LenOfList:
@@ -31,8 +29,20 @@ def draw_curves(pen, firstList, secondList):
             pen.pendown()
             pen.goto(secondList[i].x, secondList[i].y)
         i += 1
-        pen_speed+10.0
-        pen.speed(pen_speed)
+def draw_right_curves(pen, firstList, secondList):
+    i = 0
+    LenOfList = len(firstList)
+    while i < LenOfList:
+        pen.penup()
+        if i != len(firstList) - 1 and len(secondList) -1:
+            pen.goto(firstList[i].x, firstList[i+1].y)
+            pen.pendown()
+            pen.goto(secondList[i].x, secondList[i+1].y)
+        else:
+            pen.goto(firstList[i].x, firstList[i].y)
+            pen.pendown()
+            pen.goto(secondList[i].x, secondList[i].y)
+        i += 1
 
 
 def getCoordsForXAxis(left, right, steps, y):

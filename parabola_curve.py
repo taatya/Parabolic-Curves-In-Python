@@ -1,6 +1,6 @@
 # Imports
 import turtle
-from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
+from utilities import draw_left_curves, draw_right_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
 
 
 # Screen Size
@@ -63,7 +63,7 @@ pen.pendown()
 pen.goto(xMax.x, origin.y)
 
 # Making the curve
-draw_curves(pen, yList, xList)
+draw_left_curves(pen, yList, xList)
 
 # Quitting the program
 running = True

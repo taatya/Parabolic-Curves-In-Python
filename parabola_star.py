@@ -1,6 +1,6 @@
 # Imports
 import turtle
-from utilities import draw_curves, Point, getCoordsForXAxis, getCoordsForYAxis
+from utilities import draw_left_curves, draw_right_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
 
 print("starting parabola drawing")
 
@@ -81,10 +81,10 @@ pen.goto(origin.x, negativeYMax.y)
 
 
 # Making the curves
-draw_curves(pen, xList, yList)
-draw_curves(pen, negativeXList, yList)
-draw_curves(pen, negativeXList, negativeYList)
-draw_curves(pen, xList, negativeYList)
+draw_left_curves(pen, xList, yList)
+draw_right_curves(pen, xList, negativeYList)
+draw_left_curves(pen, negativeXList, negativeYList)
+draw_right_curves(pen, negativeXList, yList)
 
 # Quitting the program
 running = True
