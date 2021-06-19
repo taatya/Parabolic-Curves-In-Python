@@ -25,7 +25,7 @@ class Point:
 
 
 # Helping to make the curves
-def draw_curves(pen, firstList, secondList):
+def draw_left_curves(pen, firstList, secondList):
     i = 0
     LenOfList = len(firstList)
     while i < LenOfList:
@@ -34,6 +34,20 @@ def draw_curves(pen, firstList, secondList):
             pen.goto(firstList[i+1].x, firstList[i].y)
             pen.pendown()
             pen.goto(secondList[i+1].x, secondList[i].y)
+        else:
+            pen.goto(firstList[i].x, firstList[i].y)
+            pen.pendown()
+            pen.goto(secondList[i].x, secondList[i].y)
+        i += 1
+def draw_right_curves(pen, firstList, secondList):
+    i = 0
+    LenOfList = len(firstList)
+    while i < LenOfList:
+        pen.penup()
+        if i != len(firstList) - 1 and len(secondList) -1:
+            pen.goto(firstList[i].x, firstList[i+1].y)
+            pen.pendown()
+            pen.goto(secondList[i].x, secondList[i+1].y)
         else:
             pen.goto(firstList[i].x, firstList[i].y)
             pen.pendown()
@@ -116,10 +130,10 @@ pen.goto(topLeft.x, topLeft.y)
 pen.penup()
 
 # Drawing curves
-draw_curves(pen, topLeftYList, topLeftXList)
-draw_curves(pen, bottomLeftYList, bottomLeftXList)
-draw_curves(pen, topRightXList, topRightYList)
-draw_curves(pen, bottomRightXList, bottomRightYList)
+draw_left_curves(pen, topLeftYList, topLeftXList)
+draw_left_curves(pen, bottomLeftYList, bottomLeftXList)
+draw_right_curves(pen, topRightYList, topRightXList)
+draw_right_curves(pen, bottomRightYList, bottomRightXList )
 
 # Quit function
 running = True
