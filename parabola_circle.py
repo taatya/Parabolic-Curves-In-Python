@@ -83,6 +83,7 @@ topRight = Point(xMax.x, yMax.y)
 bottomLeft = Point(negativeXMax.x, negativeYMax.y)
 bottomRight = Point(xMax.x, negativeYMax.y)
 
+
 # Parts
 try:
     parts = float(input('Please enter how many parts you would like ( the number of dots): '))
@@ -133,7 +134,7 @@ pen.penup()
 draw_left_curves(pen, topLeftYList, topLeftXList)
 draw_left_curves(pen, bottomLeftYList, bottomLeftXList)
 draw_right_curves(pen, topRightYList, topRightXList)
-draw_right_curves(pen, bottomRightYList, bottomRightXList )
+draw_right_curves  (pen, bottomRightYList, bottomRightXList )
 
 # Quit function
 running = True
