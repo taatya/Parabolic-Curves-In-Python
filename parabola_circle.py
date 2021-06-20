@@ -1,5 +1,7 @@
 # Imports
 import turtle
+import utilities
+from utilities import draw_left_curves, draw_right_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
 
 # Screen Size
 screen_size = 1000.0
@@ -25,34 +27,6 @@ class Point:
 
 
 # Helping to make the curves
-def draw_left_curves(pen, firstList, secondList):
-    i = 0
-    LenOfList = len(firstList)
-    while i < LenOfList:
-        pen.penup()
-        if i != len(firstList) - 1 and len(secondList) -1:
-            pen.goto(firstList[i+1].x, firstList[i].y)
-            pen.pendown()
-            pen.goto(secondList[i+1].x, secondList[i].y)
-        else:
-            pen.goto(firstList[i].x, firstList[i].y)
-            pen.pendown()
-            pen.goto(secondList[i].x, secondList[i].y)
-        i += 1
-def draw_right_curves(pen, firstList, secondList):
-    i = 0
-    LenOfList = len(firstList)
-    while i < LenOfList:
-        pen.penup()
-        if i != len(firstList) - 1 and len(secondList) -1:
-            pen.goto(firstList[i].x, firstList[i+1].y)
-            pen.pendown()
-            pen.goto(secondList[i].x, secondList[i+1].y)
-        else:
-            pen.goto(firstList[i].x, firstList[i].y)
-            pen.pendown()
-            pen.goto(secondList[i].x, secondList[i].y)
-        i += 1
 
 def getCoordsForXAxis(left, right, steps, y):
     xList = []
