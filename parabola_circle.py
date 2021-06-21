@@ -1,29 +1,7 @@
 # Imports
 import turtle
 import utilities
-from utilities import draw_left_curves, draw_right_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
-
-# Screen Size
-screen_size = 1000.0
-width = screen_size
-height = screen_size
-padding = 40.0
-paddedWidth = width - padding
-paddedHeight = height - padding
-
-
-# Imports
-import turtle
-
-# Defines a coordinate
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-    def __str__(self):
-        return "(%d, %d)" % (self.x, self.y)
-    def __repr__(self):
-        return "(%d, %d)" % (self.x, self.y)
+from utilities import screen_size, width, height, padding, paddedWidth, paddedHeight, origin, yMax, xMax, negativeXMax, negativeYMax, topLeft, topRight, bottomLeft, bottomRight, Point, getCoordsForYAxis, getCoordsForXAxis, draw_right_curves, draw_left_curves
 
 
 # Helping to make the curves
@@ -45,17 +23,6 @@ def getCoordsForYAxis(bottom, top, steps, x):
         yList.append(yPoint)
         y += steps
     return yList
-
-# Points
-origin = Point(0, 0)
-yMax = Point(0, paddedHeight / 2)
-xMax = Point(paddedWidth/ 2, 0)
-negativeXMax = Point((paddedWidth/ 2) * (-1), 0)
-negativeYMax = Point(0, (paddedHeight/ 2) * (-1))
-topLeft = Point(negativeXMax.x, yMax.y)
-topRight = Point(xMax.x, yMax.y)
-bottomLeft = Point(negativeXMax.x, negativeYMax.y)
-bottomRight = Point(xMax.x, negativeYMax.y)
 
 
 # Parts

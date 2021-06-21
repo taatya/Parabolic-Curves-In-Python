@@ -1,28 +1,10 @@
 # Imports
 import turtle
-from utilities import draw_left_curves, draw_right_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
+from utilities import screen_size, width, height, padding, paddedWidth, paddedHeight, origin, yMax, xMax, negativeXMax, negativeYMax, topLeft, topRight, bottomLeft, bottomRight, Point, getCoordsForYAxis, getCoordsForXAxis, draw_right_curves, draw_left_curves
 
 print("starting parabola drawing")
 
 
-# Screen Size
-screen_size = 1000.0
-width = screen_size
-height = screen_size
-padding = 40.0
-paddedWidth = width - padding
-paddedHeight = height - padding
-
-# Points
-origin = Point(0, 0)
-yMax = Point(origin.x, paddedHeight / 2)
-xMax = Point(paddedWidth/ 2, origin.y)
-negativeXMax = Point((paddedWidth/ 2) * (-1), origin.y)
-negativeYMax = Point(origin.x, (paddedHeight/ 2) * (-1))
-topLeft = Point(negativeXMax.x, yMax.y)
-topRight = Point(xMax.x, yMax.y)
-bottomLeft = Point(negativeXMax.x, negativeYMax.y)
-bottomRight = Point(xMax.x, negativeYMax.y)
 
 # Parts
 try:

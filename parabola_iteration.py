@@ -1,15 +1,7 @@
 # Imports
 import turtle
-from utilities import draw_left_curves, draw_right_curves, Point, getCoordsForXAxis, getCoordsForYAxis, pen_speed
+from utilities import screen_size, width, height, padding, paddedWidth, paddedHeight, origin, yMax, xMax, negativeXMax, negativeYMax, topLeft, topRight, bottomLeft, bottomRight, Point, getCoordsForYAxis, getCoordsForXAxis, draw_right_curves, draw_left_curves
 
-
-# Screen Size
-screen_size = 1000.0
-width = screen_size
-height = screen_size
-padding = 40.0
-paddedWidth = width - padding
-paddedHeight = height - padding
 
 try:
     maxParts = float(input('Please enter how many iterations you would like: '))
@@ -22,17 +14,6 @@ except ValueError:
 
 # Imports
 import turtle
-
-# Points
-origin = Point(0, 0)
-yMax = Point(0, paddedHeight / 2)
-xMax = Point(paddedWidth/ 2, 0)
-negativeXMax = Point((paddedWidth/ 2) * (-1), 0)
-negativeYMax = Point(0, (paddedHeight/ 2) * (-1))
-topLeft = Point(negativeXMax.x, yMax.y)
-topRight = Point(xMax.x, yMax.y)
-bottomLeft = Point(negativeXMax.x, negativeYMax.y)
-bottomRight = Point(xMax.x, negativeYMax.y)
 
 def setup_iteration(parts):
     # # Steps
