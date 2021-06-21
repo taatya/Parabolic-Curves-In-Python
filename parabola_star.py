@@ -81,10 +81,10 @@ pen.goto(origin.x, negativeYMax.y)
 
 
 # Making the curves
-draw_left_curves(pen, xList, yList)
-draw_right_curves(pen, xList, negativeYList)
-draw_left_curves(pen, negativeXList, negativeYList)
-draw_right_curves(pen, negativeXList, yList)
+draw_left_curves(pen, yList, xList)
+draw_left_curves(pen, yList, negativeXList)
+draw_left_curves(pen, negativeYList, negativeXList)
+draw_left_curves(pen, negativeYList, xList)
 
 # Quitting the program
 running = True
