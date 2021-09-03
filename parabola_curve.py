@@ -77,6 +77,8 @@ wn.listen()
 wn.onkeypress(quit, 'q')
 wn.onkeypress(quit, 'Q')
 
+print("Working On It.")
+
 # Main Loop
 while running:
     wn.update()
