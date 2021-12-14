@@ -39,8 +39,8 @@ pen.turtlesize(2)
 pen.penup()
 pen.setheading(90)
 
-points = 10
-angle = 30
+points = 60
+angle = 70
 
 # Points
 origin = Point(0, 0)
@@ -51,7 +51,7 @@ bMax = Point(pen.xcor, pen.ycor)
 pen.setheading(90)
 pen.goto(origin.x, origin.y)
 
-steps = (aMax.y) / 100
+steps = (aMax.y) / points
 
 # Quit function
 running = True
@@ -87,7 +87,7 @@ def draw(pen, aList, bList):
     while i < LenOfList:
         pen.penup()
         if i != len(aList) - 1 and len(bList) -1:
-            pen.goto(aList[i].x, aList[i+1].y)
+            pen.goto(aList[i+1].x, aList[i+1].y)
             pen.pendown()
             pen.goto(bList[i].x, bList[i].y)
         else:
@@ -99,8 +99,10 @@ def draw(pen, aList, bList):
 
 aList = getCoordsA(origin, aMax, steps, aMax.x)
 bList = getCoordsB(aList, steps)
-print(aList)
-print(bList)
+# print(aList)
+# print(bList)
+
+bList.reverse()
 
 draw(pen, aList, bList)
 
