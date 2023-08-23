@@ -1,4 +1,4 @@
-# Imports
+    # Imports
 import turtle
 import utilities
 from utilities import screen_size, width, height, padding, paddedWidth, paddedHeight, origin, yMax, xMax, negativeXMax, negativeYMax, topLeft, topRight, bottomLeft, bottomRight, Point, getCoordsForYAxis, getCoordsForXAxis, draw_right_curves, draw_left_curves

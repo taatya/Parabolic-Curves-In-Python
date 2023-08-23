@@ -40,7 +40,7 @@ pen.penup()
 pen.setheading(90)
 
 points = 60
-angle = 70
+angle = 12
 
 # Points
 origin = Point(0, 0)
@@ -69,7 +69,7 @@ def getCoordsA(bottom, top, steps, x):
     return aList
 
 def getCoordsB(aList, steps):
-    pen.setheading(90 + angle)
+    pen.setheading(angle)
     bList = []
     x = 0
     LenOfList = len(aList)
@@ -78,7 +78,7 @@ def getCoordsB(aList, steps):
         bPoint = Point(pen.xcor(), pen.ycor())
         bList.append(bPoint)
         x += 1
-    pen.setheading(90)
+    # pen.setheading(90)
     return bList
 
 def draw(pen, aList, bList):
