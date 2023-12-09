@@ -40,7 +40,8 @@ pen.penup()
 pen.setheading(90)
 
 points = 60
-angle = 12
+input_angle = 45
+angle = 90-input_angle
 
 # Points
 origin = Point(0, 0)
