@@ -22,6 +22,11 @@ padding = 40.0
 paddedWidth = width - padding
 paddedHeight = height - padding
 
+
+points = int(input("Enter how many points you want: "))
+input_angle = (int(input("Enter the angle you want: ")))
+angle = 90-input_angle
+
 # Setting up the screen
 wn = turtle.Screen()
 wn.setup(width=width, height=height)
@@ -39,9 +44,6 @@ pen.turtlesize(2)
 pen.penup()
 pen.setheading(90)
 
-points = 60
-input_angle = 45
-angle = 90-input_angle
 
 # Points
 origin = Point(0, 0)
